@@ -17,7 +17,7 @@ setup(
         'transformers',
         'tqdm',
         'pandas',
-        'typeguard>=2'
+        'typeguard>=3'
     ],
     include_package_data=True,
     use_scm_version=True,

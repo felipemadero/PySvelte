@@ -1,5 +1,6 @@
+import importlib.util
 import json
-import runpy
+import sys
 from inspect import Parameter, Signature, signature
 from pathlib import Path
 from typing import List
@@ -51,8 +52,12 @@ class ArgumentHandler:
     @staticmethod
     def load_from_py(path: Path) -> "ArgumentHandler":
         arg_handler = ArgumentHandler()
-        py_module = runpy.run_path(str(path))
-        init = typechecked(py_module["init"])
+        module_name = f"pysvelte._component_{path.stem}"
+        spec = importlib.util.spec_from_file_location(module_name, str(path))
+        py_module = importlib.util.module_from_spec(spec)
+        sys.modules[module_name] = py_module
+        spec.loader.exec_module(py_module)
+        init = typechecked(py_module.init)
 
         def validate_and_process_args(**kwds):
             result = init(**kwds)
