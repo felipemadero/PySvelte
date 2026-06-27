@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List, Optional, Union
 
 import numpy as np
 import torch
@@ -7,7 +7,7 @@ Tensor = Union[np.ndarray, torch.Tensor]
 
 
 def init(
-    tokens: List[str], attention: Tensor, info_weighted: Tensor = None, head_labels=None
+    tokens: List[str], attention: Tensor, info_weighted: Optional[Tensor] = None, head_labels=None
 ):
     """Visualize the attention patterns for multiple attention heads.
 
