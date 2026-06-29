@@ -12,12 +12,12 @@
   "license": "ISC",
   "devDependencies": {
     "blob": "^0.1.0",
-    "clean-webpack-plugin": "^3.0.0",
+    "clean-webpack-plugin": "^4.0.0",
     "glob": "^7.1.6",
     "html-webpack-plugin": "^4.5.1",
-    "svelte-loader": "github:sveltejs/svelte-loader",
-    "webpack": "^5.16.0",
-    "webpack-cli": "^4.4.0",
+    "svelte-loader": "^3.2.4",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
@@ -34,6 +34,6 @@
     "numpy-parser": "^1.2.3",
     "pako": "^2.0.3",
     "path": "^0.12.7",
-    "svelte": "^3.31.2"
+    "svelte": "^3.59.2"
   }
 }

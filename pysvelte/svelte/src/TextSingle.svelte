@@ -9,10 +9,10 @@
     // OK what's up? 
     // I pass in a 1D vector of activations, and need to plot a list of tokens, each coloured by the activation of the corresponding token
 
-    var activations_array = [];
-    for (var i = 0; i < activations.shape[0]; i++) {
-        activations_array.push(activations.data[i]);
-    }
+    var activations_array = Array.from(
+        { length: activations.shape[0] },
+        (_, i) => activations.data[i]
+    );
     // console.log(activations_array)
     // console.log(activations)
 
